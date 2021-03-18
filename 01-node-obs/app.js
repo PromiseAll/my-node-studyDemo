@@ -16,3 +16,5 @@ const config = {
 
 var nms = new nodeMediaServer(config);
 nms.run();
+
+module.exports = nms
