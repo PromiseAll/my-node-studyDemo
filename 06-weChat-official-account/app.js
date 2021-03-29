@@ -21,7 +21,7 @@ app.use(async (ctx) => {
     <FromUserName><![CDATA[${message.ToUserName}]]></FromUserName>
     <CreateTime>${Date.now()}</CreateTime>
     <MsgType><![CDATA[text]]></MsgType>
-    <Content><![CDATA[${new Date().toLocaleString()}]]></Content>
+    <Content><![CDATA[${new Date().toLocaleString() + message.PicUrl}]]></Content>
     </xml>`;
     ctx.body = resMessage;
     return;

@@ -6,7 +6,7 @@ module.exports = {
       req
         .on("data", (data) => {
           //
-          console.log(data);
+          // console.log(data);
           xmlData += data.toString();
         })
         .on("end", () => {
