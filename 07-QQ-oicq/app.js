@@ -34,8 +34,8 @@ bot.on("message", (data) => {
     console.log(data.message[0].data.text);
     
     var message = [
-        // segment.text("hello world"),
-        segment.bface("C:/Users/Administrator/Pictures/nav.png"),
+        segment.text("hello world"),
+        // segment.bface("C:/Users/Administrator/Pictures/nav.png"),
         // segment.face(104),
         // segment.location(1,102,'你心里')
         // segment.ptt('C:/Users/Administrator/Pictures/1.mp3')
