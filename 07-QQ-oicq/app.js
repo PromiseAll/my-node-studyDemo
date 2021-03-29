@@ -46,3 +46,5 @@ bot.on("message", (data) => {
 
 
 bot.login("2238480780QQ"); // your password or password_md5
+
+module.exports = bot
