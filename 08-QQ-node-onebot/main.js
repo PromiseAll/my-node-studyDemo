@@ -57,4 +57,4 @@ function inputAccount() {
 
 
 const { createServer}  = require("./lib/core")
-module.exports = createServer()
+module.exports = createServer().server
