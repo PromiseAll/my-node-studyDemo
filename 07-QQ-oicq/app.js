@@ -29,7 +29,7 @@ bot.on("system.login.device", () => {
 });
 
 const My = require("./data/text/my");
-const my = new My(bot, 1310020799);
+const my = new My(bot, 2325612559);
 //监听私聊
 bot.on("message.private.friend", (data) => {
   //   var message = [
@@ -40,7 +40,7 @@ bot.on("message.private.friend", (data) => {
   // segment.record("C:/Users/Administrator/Pictures/3.silk")
   //   ];
   //   console.log(data);
-  if (data.user_id == 1310020799 && data.message[0].type == "text") {
+  if (data.user_id == 2325612559 && data.message[0].type == "text") {
     my.receive(data.message[0].data.text);
   }
   //   bot.sendPrivateMsg(2325612559, message);
@@ -48,4 +48,7 @@ bot.on("message.private.friend", (data) => {
 
 bot.login("2238480780QQ"); // your password or password_md5
 
-module.exports = bot;
+const Koa = require("koa");
+let app = new Koa();
+app.listen(3000);
+module.exports = app;
