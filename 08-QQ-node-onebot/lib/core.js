@@ -93,7 +93,7 @@ function startup(arg) {
     }
     filter.init(config.event_filter);
     createBot();
-    createServer();
+    // createServer();
     setTimeout(botLogin, 500);
 }
 
@@ -292,6 +292,11 @@ function createServer() {
         bot.logger.error("开启http服务器失败，进程退出。");
         process.exit(0);
     })
+
+    return {
+        server,
+        wss
+    }
 }
 
 /**
@@ -465,4 +470,7 @@ function debug(msg) {
         console.log(msg);
 }
 
-module.exports = startup;
+module.exports = {
+    startup,
+    createServer
+};
