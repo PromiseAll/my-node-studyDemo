@@ -12,7 +12,7 @@
         var videoElement = document.getElementById("videoElement");
         var flvPlayer = flvjs.createPlayer({
           type: "flv",
-          url: "http://172.16.2.140:8000/live/1234.flv",
+          url: "ws://127.0.0.1:8000/live/1234.flv",
         });
         flvPlayer.attachMediaElement(videoElement);
         flvPlayer.load();

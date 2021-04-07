@@ -28,8 +28,8 @@ bot.on("system.login.device", () => {
   });
 });
 
-const My = require("./data/text/my");
-const my = new My(bot, 2325612559);
+// const My = require("./data/text/my");
+// const my = new My(bot, 2325612559);
 //监听私聊
 bot.on("message.private.friend", (data) => {
   //   var message = [
@@ -41,7 +41,9 @@ bot.on("message.private.friend", (data) => {
   //   ];
   //   console.log(data);
   if (data.user_id == 2325612559 && data.message[0].type == "text") {
-    my.receive(data.message[0].data.text);
+    // my.receive(data.message[0].data.text);
+    bot.sendPrivateMsg(2325612559,[segment.record("C:/Users/Administrator/Pictures/3.slk")])
+    
   }
   //   bot.sendPrivateMsg(2325612559, message);
 });
