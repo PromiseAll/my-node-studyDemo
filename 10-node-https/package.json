@@ -1,5 +1,5 @@
 {
-  "name": "07-QQ-oicq",
+  "name": "10-node-https",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,10 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "koa": "^2.13.1",
-    "oicq": "^1.14.4"
-  }
+  "license": "ISC"
 }
