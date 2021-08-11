@@ -1,8 +1,8 @@
 {
-  "name": "11-koa-http",
+  "name": "13-koa-jwt",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.1",
-    "koa-router": "^7.4.0",
-    "koa2-cors": "^2.0.6"
+    "koa-body": "^4.2.0",
+    "koa-jwt": "^4.0.1",
+    "koa-router": "^10.0.0"
   }
 }
