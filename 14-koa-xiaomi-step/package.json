@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.0.0",
+    "mysql2": "^2.3.0"
   }
 }
