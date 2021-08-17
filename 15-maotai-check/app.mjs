@@ -1,6 +1,6 @@
 import Axios from "axios";
 import color from "colors-console";
-
+import cryptoJs from "crypto-js";
 async function getCategoryList() {
   let data = {
     brandIds: null,
@@ -13,26 +13,60 @@ async function getCategoryList() {
     sort: null,
     levelId: "794383030373425152",
     levelCode: "GRHY01",
-    integralType: null,
+    integralType: 'INTEGRAL',
   };
   let res = await Axios.post("https://prod.ggszhg.com/xgt-app/applet/product/search", data);
-  let buyList = [];
   let integralList = [];
   res.data.data.content.map((v) => {
-    if (v.isSellOut) {
-      console.log();
-      buyList.push(v);
-    }
-    if (v.isSellOut && v.integral) {
+    if (!v.isSellOut) {
       integralList.push(v);
     }
   });
   let date = new Date();
   console.log(`当前时间:${date.toLocaleDateString() + date.toLocaleTimeString()}`);
-  console.log(`可购买商品数量:${color("green", buyList.length)},送积分商品数量:${color("red", integralList.length)}`);
-  buyList.map((v) => console.log(color("green", v.name)));
-  integralList.map((v) => console.log(color("red", v.name)));
+  console.log(
+    `可购买积分商品数量:${color("green", integralList.length)}`
+  );
+  integralList.map((v) => console.log(color("green", v.id)));
+  // integralList.map((v) => console.log(color("red", v.name)));
 }
-setInterval(() => {
-  getCategoryList();
-}, 10000);
+
+async function ll() {
+  let data = {
+    productId: "845128508794474496",
+  };
+
+  let params = {
+
+  };
+
+  let res = await Axios.post(
+    "https://prod.ggszhg.com/xgt-app-not-enter/applet/product/detail",
+    data,
+    {
+      params: {
+        ...params,
+        sign: sign(params, data),
+      },
+    }
+  ).catch((err) => {
+    // console.log(err.res);
+  });
+  console.log(res.data.data);
+}
+
+
+getCategoryList()
+
+// getDetail();
+
+function sign(t, n) {
+  var r = [];
+  for (var a in t) r.push("".concat(a, "=").concat(t[a]));
+  var o = "".concat(r.join("&")).concat("e348db70-2e67-4a72-9578-8b40ad809cbb");
+  let data =
+    (n && (o = "".concat(o).concat(JSON.stringify(n))),
+    (o = o.replace(/a/gm, "c").replace(/e/gm, "g").replace(new RegExp(" ", "gm"), "")),
+    cryptoJs.MD5(o).toString().toUpperCase());
+  return data;
+}
