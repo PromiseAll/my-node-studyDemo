@@ -22,7 +22,8 @@ const router = new Router();
 
 // 登录
 user.post("/login", (ctx, next) => {
-  let checkUser = ctx.request.body.username == USER.username && ctx.request.body.password == USER.password;
+  let checkUser =
+    ctx.request.body.username == USER.username && ctx.request.body.password == USER.password;
   if (checkUser) {
     ctx.body = {
       code: 200,
@@ -62,7 +63,7 @@ app.use(KoaBody());
 
 // 处理token验证错误
 app.use(async (ctx, next) => {
- await next().catch((err) => {
+  await next().catch((err) => {
     ctx.body = {
       code: 400,
       data: "token验证失败",
@@ -85,6 +86,11 @@ nbf (Not Before)：定义在什么时间之前，该jwt都是不可用的
 iat (Issued At)：jwt的签发时间
 jti (JWT ID)：jwt的唯一身份标识，主要用来作为一次性token,从而回避重放攻击
 */
+/**
+ * 默认authorization为Bearer + token
+ * 自定义getToken方法 opts.getToken function
+ * 利用Cookie（此cookie非彼cookie）此处的Cookie只作为存储介质发给服务端的区域，校验并不依赖于服务端的session机制，服务端不会进行任何状态的保存。check the cookies (if opts.cookie is set)
+ */
 app.use(
   KoaJwt({ secret: SECRET, key: "jwtdata" }).unless({
     // 登录接口不需要验证
