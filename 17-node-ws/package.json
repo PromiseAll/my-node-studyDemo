@@ -2,7 +2,11 @@
   "name": "17-node-ws",
   "version": "1.0.0",
   "description": "",
+<<<<<<< HEAD
   "main": "index.js",
+=======
+  "main": "app.js",
+>>>>>>> 3d9d171abe922820b910932f23bbfb8e5103c365
   "bin": "app.js",
   "type": "commonjs",
   "scripts": {
