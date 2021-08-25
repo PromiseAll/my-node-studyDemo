@@ -73,6 +73,7 @@ async function submit(userid, apptoken, step) {
   data = data.replace("my_userid", userid);
   data = data.replace("my_date", dayjs().format("YYYY-MM-DD"));
   data = data.replace("my_step", step);
+  data = data.replace("my_dis", step + 1);
   let res = await Axios.post("https://api-mifit.huami.com/v1/data/band_data.json", data, {
     headers: {
       apptoken,

@@ -1,4 +1,2 @@
-, {
-  mode: CryptoJS.mode.ECB,
-  padding: CryptoJS.pad.Pkcs7,
-}
+console.log(CryptoJS.enc.Utf8.parse(str));
+// console.log(CryptoJS.enc.Utf8.parse(str).toString(CryptoJS.enc.Hex));
