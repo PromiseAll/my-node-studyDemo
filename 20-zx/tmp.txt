@@ -1,0 +1,9 @@
+removed 4 packages in 581ms
+
+up to date in 495ms
+
+up to date in 587ms
+
+up to date in 487ms
+
+up to date in 553ms
